@@ -1,0 +1,3 @@
+ %  Programs can be quite short % unlike comments ...
+ 
+ print 44*(32-7)

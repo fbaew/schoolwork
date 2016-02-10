@@ -1,0 +1,56 @@
+CPSC 411 Assignment 3
+Gregg Thomas Lewis
+00323505
+
+Usage:
+
+As usual, you can pipe the source file into the parser script, and be presented
+with an abstract syntax tree corresponding to that source.
+
+For example:
+
+	cat tests/M/4.m | python parser.py
+
+
+Note:
+
+Some nodes in the AST have children which are lists of other objects. In the
+displayed version of the syntax tree, these are represented as "fake" nodes,
+with names enclosed in square braces. This is only done for visual clarity,
+and the fake nodes do not actually exist in the real AST. For example, an
+M_prog node has 2 children: a list of statements and a list of declarations.
+
+The actual tree for a program might look like:
+
+M_prog
+	M_var		 ----+
+		...		     |
+	M_var		     |--- declarations
+		...		     |
+	M_fun		     |
+		...		 ----+
+	M_cond		 ----+
+		...		     |--- statements
+	M_app		     |
+		...		 ----+
+
+But the output of parser.py will look like:
+
+M_prog
+	[Declarations]
+		M_var
+			...
+		M_var
+			...
+		M_fun
+			...
+	[Statements]
+		M_cond
+			...
+		M_app
+			...
+
+
+Tests:
+
+6 test files have been included in tests/

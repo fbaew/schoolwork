@@ -1,0 +1,19 @@
+x:= a+b*c
+begin
+  x:=1;
+  y:=2;
+  z:=3;
+end
+
+/* yet more comments
+
+   v:= w-3;
+
+ */
+
+print x;
+
+*/
+
+write y;
+

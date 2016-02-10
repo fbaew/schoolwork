@@ -1,0 +1,28 @@
+PROG -> STMT.
+STMT -> if EXPR then STMT else STMT
+            | while EXPR do STMT
+            | input id
+            | id assign EXPR
+            | write EXPR
+            | begin STMTLIST end.
+
+STMTLIST -> STMT semicolon STMTLIST
+            |.
+
+EXPR -> TERM EXPR'.
+EXPR' -> ADDOP TERM EXPR'
+        |.
+
+ADDOP -> add
+            | sub.
+
+TERM -> FACTOR TERM'.
+TERM' -> MULOP FACTOR TERM'
+        |.
+
+MULOP -> mul
+            | div.
+FACTOR -> lpar EXPR rpar
+            | id
+            | num
+            | sub num.

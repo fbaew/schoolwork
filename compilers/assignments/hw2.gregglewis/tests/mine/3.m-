@@ -1,0 +1,14 @@
+/*
+    This is the same as 2.m-, except with a small error.
+    This file should not compile (the second last "end" needs a semicolon)
+*/
+begin
+    input x;
+    y := x * 2;
+    if y then if x then y := 3 else x := 4 else z := 2;
+    while x * 4 do write 4 + 6 * 100;
+    begin
+        input gregg;
+        write gregg * 2;
+    end
+end

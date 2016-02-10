@@ -1,0 +1,9 @@
+while loops:
+    label(count)
+    rPush x
+    cJump label(count+1)
+    {
+    
+    }
+    cJump 
+    label(count+1)

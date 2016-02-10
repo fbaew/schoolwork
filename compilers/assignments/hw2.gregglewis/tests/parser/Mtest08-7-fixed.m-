@@ -1,0 +1,9 @@
+%  did I forget something!
+
+begin
+  input x;
+  x:= x*x;
+  input y;
+  if x-y then z:=1 else x:=0;
+  print z;
+end 

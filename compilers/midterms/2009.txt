@@ -1,0 +1,15 @@
+ASSIGN -> LOC assign EXP.
+LOC -> id
+    | ARRAY.
+ARRAY -> id INDEX.
+INDEX -> lsqpar INDEXES rsqpar.
+INDEXES -> num MORE_INDEXES.
+MORE_INDEXES -> comma num MORE_INDEXES
+            |.
+EXP -> EXP + TERM
+    | TERM.
+TERM -> TERM * FACTOR
+    | FACTOR.
+FACTOR -> LOC
+    | num
+    | lpar EXP rpar.

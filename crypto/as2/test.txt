@@ -1,0 +1,9 @@
+hello this is a test
+it has a few lines
+and is made up of several blocks.
+It divides neatly into different blocks... encrypts and decrypts just fine
+...except the newline at the EOF seems to get negated somehow.
+
+I'm too tired to figure out why.
+
+

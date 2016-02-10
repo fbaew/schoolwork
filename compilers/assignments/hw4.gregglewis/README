@@ -1,0 +1,17 @@
+CPSC 411 Assignment 4
+Gregg Thomas Lewis
+00323505
+
+Usage:
+
+As usual, you can pipe the source file into the parser script, and be presented
+with an intermediate representation tree corresponding to that source.
+
+For example:
+
+	cat tests/M/4.m | python TypeChecker.py
+
+8 test files have been lovingly handcrafted by yours truly, and placed with
+care in tests/M/
+
+Error messages are logged to stderr, while the IR is displayed on stdout.

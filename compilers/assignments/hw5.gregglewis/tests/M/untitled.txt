@@ -1,0 +1,63 @@
+
+
+def p_declarations(p):
+	'''declarations : declaration semicolon declarations'''
+	pass
+
+def p_declarations_empty(p):
+	'''declarations : empty'''
+	pass
+
+def p_declaration_var(p):
+	'''declaration : var_declaration'''
+	pass
+
+def p_declaration_fun(p):
+	'''declaration : fun_declaration'''
+	pass
+
+def p_fun_declaration(p):
+	'''fun_declaration : FUN identifier param_list COLON type CLPAR fun_block CRPAR'''
+	pass
+
+def p_param_list(p):
+	'''param_list : LPAR parameters RPAR'''
+	pass
+
+def p_parameters(p):
+	'''parameters : parameters1'''
+	pass
+	
+def p_parameters_empty(p):
+	'''parameters : empty'''
+	pass
+
+def p_parameters1(p):
+	'''parameters1 : parameters1 COMMA basic_var_declaration
+		       | basic_var_declaration'''
+	pass
+
+def p_type(p):
+	'''type : INT
+		| BOOL'''
+	pass
+
+def p_fun_block(p):
+	'''fun_block : declarations fun_body'''
+
+def p_var_declaration(p):
+	'''var_declaration : VAR basic_var_declaration'''
+	pass
+
+def p_basic_var_declaration(p):
+	'''basic_var_declaration : identifier COLON type'''
+	pass
+
+
+def p_prog_stmt_block(p):
+	'''prog_stmt : CLPAR block CRPAR'''
+	pass
+
+def p_prog(p):
+	'''prog : block'''
+	pass

@@ -1,0 +1,49 @@
+Name: Gregg Thomas Lewis
+UCID: 00323505
+Date: Friday, January 28, 2011
+Known Errors/Bugs: None
+References:
+There are a couple snippets in scanner.py which are adapted or directly
+lifted from the PLY documentation at http://www.dabeaz.com/ply/ply.html.
+Where this is the case, I have indicated the section of the documentation
+where the code originated. 
+
+Makefile:
+No makefile is provided, as I've implemented my solution in python.
+
+Tests:
+Tests can be found in the test directory. I didn't really have time to make
+a nice unit test package, but in tests/ there is a python script tests.py
+which takes one integer argument (1-6) indicating which test is to be run.
+I'll make this smoother later.
+
+Usage:
+
+To scan a file for tokens and display the tokens found, use the script
+showOutput.py, providing input on stdin. For example, to scan a file called
+script.m-, the command
+    cat script.m- | python showOutput.py
+
+Will print a list of all the tokens in script.m-
+
+Notes:
+
+Regarding recursive multiline comments: I have handed nested comments in a way
+similar to how most languages handle brackets. That is to say that there should
+typically be an equal number of open symbols and close symbols for multiline
+comments. If 3 blocks are opened within each other but only 2 are closed, then
+everything that follows will be regarded as a comment.
+
+Single line comments take precedence over multiline ones, meaning that if a
+comment block is closed on a line that is a single line comment, the close
+symbol will be ignored. For example:
+
+    ...
+    /*
+        here are some remarks
+        here are some more, and what's this! A comment! % */
+        This comment block is still open, because we ignored the close symbol
+    */
+    
+Indentation is provided in the above example for clarity, but is not necessary 
+for proper scanning.

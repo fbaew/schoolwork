@@ -1,0 +1,21 @@
+/*
+    This is a pretty useless program, but it uses a lot of the possible
+    derivations within the m- language.
+    
+    It will prompt the user for a value. If the value is anything other than
+    the number 0, it will enter an infinite loop, printing "604" over and over.
+    
+    If the first number entered is 0, then the user will be prompted for a
+    second value, which will be doubled and displayed.
+    
+*/
+begin
+    input x;
+    y := x * 2;
+    if y then if x then y := 3 else x := 4 else z := 2;
+    while x * 4 do write 4 + 6 * 100;
+    begin
+        input gregg;
+        write gregg * 2;
+    end;
+end

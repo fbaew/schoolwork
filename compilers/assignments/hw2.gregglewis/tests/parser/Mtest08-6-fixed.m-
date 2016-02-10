@@ -1,0 +1,9 @@
+% What does this program do?
+
+begin
+   input x;
+   y:= x*x;
+   z:=0;
+   while y-(z*z) do z:=z+1;
+   if x-z then print 0 else print 1;
+end

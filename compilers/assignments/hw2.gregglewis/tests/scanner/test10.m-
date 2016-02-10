@@ -1,0 +1,18 @@
+/*  An implementation of monus (truncated subtraction)  */
+
+begin
+   read x;
+   read y;
+   do begin
+     test := x*y;  % zero if either x or y are zero
+     if test then begin  
+                    x:= x-1;
+                    y:= y-1;
+                  end;
+     else begin end;
+     if test then nottest:= 0 else nottest=1;
+   until nottest;
+   print x;
+end
+
+% or is it? Can you detect all the errors and correct the program?

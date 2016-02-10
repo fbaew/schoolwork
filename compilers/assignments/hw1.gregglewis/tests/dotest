@@ -1,0 +1,4 @@
+python tests.py 1
+python tests.py 2
+python tests.py 3
+python tests.py 4

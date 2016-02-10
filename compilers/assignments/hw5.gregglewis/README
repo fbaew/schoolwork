@@ -1,0 +1,24 @@
+CPSC 411 Assignment 5
+Gregg Thomas Lewis
+00323505
+
+Usage:
+
+As usual, you can pipe the source file into the compiler script, and be presented
+with some AM code that corresponds to your M source (which you can subsequently
+pipe to another file!)
+
+For example:
+
+	cat tests/as5/05.m | python Compiler.py > compiled.am
+
+5 test files have been lovingly handcrafted by yours truly, and placed with
+care in tests/as5/
+
+Additional tests can be found in tests/ and tests/M/
+
+Error messages are logged to stderr, while the AM code is displayed on stdout.
+
+
+I realized my submission for AS4 was using some syntax which was incompatible with Python 2.4
+(Just for exception handling, nothing major. Hope I didn't get owned too hard for that!)

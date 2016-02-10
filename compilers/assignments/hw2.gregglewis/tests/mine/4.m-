@@ -1,0 +1,16 @@
+/*
+    This is the same as 2.m-, with the added complication of a more involved
+    expression being assigned to marco.
+*/
+
+begin
+    input x;
+    y := x * 2;
+    if y then if x then y := 3 else x := 4 else z := 2;
+    while x * 4 do write 4 + 6 * 100;
+    begin
+        input gregg;
+        write gregg * 2;
+    end;
+    marco := (10/5) * 24 + 3;
+end

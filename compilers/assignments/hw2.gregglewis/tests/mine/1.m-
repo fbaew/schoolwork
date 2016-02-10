@@ -1,0 +1,14 @@
+/*
+This program is pretty simple. If there's a value other than 0 already in x,
+then we set foo equal to 6. If not, we prompt the user for a value for y, and
+do nothing with it.
+
+Interested parties can check out the stack manually after running the program.
+*/
+
+if x then
+    begin
+        foo := 3 + 3;
+        write foo;
+    end
+else input y

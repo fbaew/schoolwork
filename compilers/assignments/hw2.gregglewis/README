@@ -1,0 +1,108 @@
+AUTHOR INFORMATION ############################################################
+
+Name: Gregg Thomas Lewis
+UCID: 00323505
+Date: Sunday, February 27, 2011
+Development Environment:
+    -Mac OS X 10.6.6, Python 2.7.1
+
+Tested On:
+    -Mac OS X 10.6.6, Python 2.7.1
+    -Scientific Linux 5.2 (kernel version 2.6.18-164.6.1.el5)
+    
+USAGE #########################################################################
+
+To compile a minisulus file into stack machine code, pipe the source file
+into the script /compile.py. For instance, to compile a file called test.m-
+from the root of the source tree, use the command
+
+    cat test.m- | python compile.py
+
+The resulting stack machine code will be printed to stdout. If the source
+file is not valid minisculus, an error message will be printed to stderr,
+and no stack machine code will be produced.
+
+KNOWN ISSUES/BUGS #############################################################
+
+    -Multiline comments seem to throw off my error reporting...
+     it seems that newlines in the comments aren't getting counted, but I'm not
+     really sure what's going on. It's minor.
+
+    -In order to accommodate the use of "print" and "read" in some of the test
+     files, I've multiply defined the tokens INPUT and WRITE. PLY gives a
+     warning about this, but I've suppressed it.
+
+REFERENCES ####################################################################
+
+There are a couple snippets in scanner.py which are adapted or directly
+lifted from the PLY documentation at http://www.dabeaz.com/ply/ply.html.
+Where this is the case, I have indicated the section of the documentation
+where the code originated. 
+
+Likewise, the approach to building an AST from a list of tokens was adapted
+from the notes of Brett Giles:
+    http://pages.cpsc.ucalgary.ca/~gilesb/ta.2003/411/notes/lab4.html
+    http://pages.cpsc.ucalgary.ca/~gilesb/ta.2003/411/notes/lab5.html
+    http://pages.cpsc.ucalgary.ca/~gilesb/ta.2003/411/pycalc/calcpy.pdf
+    
+
+GRAMMAR TRANSFORMATION ########################################################
+
+The grammar transformation was fairly straightforward; I simply had to remove
+the immediate left recursions present in the nonterminals stmtlist, expr, and
+term by introducing stmtlist', expr', and term', and modifying the original
+three to make use of the new three. Once that was done, I eliminated stmtlist,
+and renamed stmtlist' to just stmtlist, in order to simplify the grammar
+slightly.
+
+Once this was done, creating the recursive descent parser was fairly
+straightforward. I defined a series of objects representing nodes in an
+abstract syntax tree, and had the constructor for each of those objects
+call the constructors on its children. In addition, I created a function
+called consume() which consumes a token from the input. Any method that eats
+a non-terminal uses consume() to do so, and specifies whether successful
+consumption is critical or not. If it is, and the expected token is not seen,
+an error message is issued and the compiler exits.
+
+A copy of the final transformed grammar has been included in the file grammer.txt
+It is given in the format accepted by the Context Free Grammar Checker:
+    http://smlweb.cpsc.ucalgary.ca/start.html
+
+MAKEFILE ######################################################################
+No makefile is provided, as I've implemented my solution in python.
+
+TESTS #########################################################################
+A quick and dirty automated test script can be found in the root directory.
+Executing
+
+    python doTests.py
+
+will attempt to parse all the files in the subdirectories of /tests/, and
+compare the exit code of each attempt to the expected exit code. The tests
+found in /tests/mine/ indicate in the comments specifically what they test,
+and what the resulting stack machine code should do when executed, to allow for
+manual testing.
+
+The tests in /tests/mine/ were created by me to test specific aspects of the
+parser. Tests in /tests/parser/ and /tests/scanner/ are from the course website
+and are provided simply as additional fodder for putting the parser through its
+paces.
+
+NOTES #########################################################################
+
+Once we encounter one error, we stop trying to parse. We say where the
+erroneous token was found, and what token we expected to see. Then we raise an
+exception which is caught right away, and the program exits on code 1.
+
+Regarding if statements... cJUMP takes the jump if the top of the stack is 0,
+doesn't jump otherwise. My interpretation of if/then/else is similar to that
+of most programming languages; the THEN statement is executed if the expression
+is True (i.e. not zero), and the ELSE statement is executed otherwise.
+
+CHANGES #######################################################################
+
+Since Assignment 1:
+    -Most notably, created compile.py which produces stack machine code from m-
+    -Adapted scanner.py slightly to keep track of line numbers for each
+     scanned token. (This allows better error reporting!)
+    -scanner.py now also reports the location of illegal characters

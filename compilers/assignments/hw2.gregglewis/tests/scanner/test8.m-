@@ -1,0 +1,13 @@
+/* A program /* which I had to correct */ % how good is your lexer */
+   calculates the factorial of the number input */
+
+begin 
+    read x; % input a number ..
+    y:= 1;
+    if x then 
+       do begin  y:= y* x; x:= x-1; if x then c:=0 else c:=1; end
+       until c
+    else begin end;
+    print y;
+
+end 
