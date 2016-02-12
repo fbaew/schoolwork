@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 27
+/SENG301/!svn/ver/302/tests
+END
+junit.jar
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/SENG301/!svn/ver/103/tests/junit.jar
+END
+hamcrest-core.jar
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/SENG301/!svn/ver/103/tests/hamcrest-core.jar
+END

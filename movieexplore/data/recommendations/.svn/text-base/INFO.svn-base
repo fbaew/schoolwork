@@ -1,0 +1,8 @@
+User 1 rated movies 1-3 highly (5/5), and no other movies (user in question)
+User 2 rated movies 1-3 poorly (1/5), as well as rating movie 9 5/5. (dissimilar user)
+Users 3-7 rated movies 1-3 highly (5/5) As well as (between them) movies 4-8 highly (5/5) (similar users)
+
+Movies recommended should be movies 4-8.
+
+Note that Lethal Weapon 4 and Step Brothers both have the "War" genre bit set to true. So when we filter
+movie reccs by --year=199 and --genre=War we should only get Lethal Weapon 4.

@@ -1,0 +1,23 @@
+Basically we've got 5 movies rated really well, and 5 more rated less well. All the "good"
+movies have a rating of 5 (score of 25, that is, five people have rated them.) All of
+these top rated movies were rated by people from Sauquoit, NY (zip = 13456). The "less
+good" five movies were rated by people from none other than Beverly Hills 90210. They
+are much more discerning in their taste of movies, so the scores are lower. As a result,
+we expect to see none of the "best" five if we restrict our search to 90210.
+
+To Summarize:
+
+Movies 1-6 are rated 5 by the people of Sauquoit
+Movies 7-11 are rated 4 by the people of Beverly Hills
+Movie 12 is the least popular of them all, with one rating of 1 from Beverly Hills, and
+one rating of 1 from Sauquoit.
+
+(I also mean to imply that the total score (see popularity.pdf) is higher for Sauquoit
+than for Beverly Hills.)
+
+We expect to see movies 7, 8, 9, 10, 11 when we do top --zip=90210, and we never expect
+to see movie 12.
+
+I've also added some movies which are all rated below movies 1-5, but whose ratings come
+from users in zip code 90277 (Redondo Beach). doing top --zip=902 should count their results
+as well as the Beverly Hills ones.

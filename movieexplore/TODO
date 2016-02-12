@@ -1,0 +1,83 @@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@ LET'S GET THIS STUFF SORTED OUT BEFORE SUBMITTING DELIVERABLE 5!!!  @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+	Gotta test every public method I think? Start with the fundamental
+	objects and work up.
+		
+
+Kyle
+	Movie.java: DONE
+		Movie() -- mainly just test that genres are being set correctly.
+		compute_bayesian()
+		bayesian_avg()
+		histogram()
+		add_rating()
+		user_rated_this_movie()
+		add_user()
+
+	Rating.java: DONE
+		Rating()
+		RatingComparator.compare()
+			-test rating1 > rating2, rating1 == rating2, rating1 < rating2. Overkill?
+	
+	User.java: DONE
+		User()
+
+	ArgParser.java: DONE
+		ArgParser() *~12 -- there are a ton of cases to test out here... 
+		movie_filter()
+		rating_filter()
+
+
+
+
+
+Gregg	
+	DataCenter.java: DONE
+		get_instance()    | ---- Except for these two...
+		set_path()        |
+		filter_users_by()
+		CompareUsers()
+		filter_ratings_by()
+		filter_movies_by()
+	
+	Filters.java DONE
+		AndFilter()
+		OrFilter()
+		DummyFilter()
+		UserRatingFilter()
+		NegatedUserRatingFilter()
+		ZipFilter()
+		ValueRatingFilter()
+		MovieRatingFilter()
+		MovieFilter()
+		UserMovie()
+		NegatedUserMovieFilter()
+		YearFilter()
+		GenreFilter()
+		UserFilter()
+		GenderFilter()
+	
+	SimilarUsers.java ...DONE?
+		find_similar_users()
+	
+	Util.java DONE?
+		compute_bayesian()
+		BayesianComparator()
+		parse_int()
+		trim_output()
+	
+	
+	Acceptance tests for Feature 12. Should be pretty trivial. I'll
+	do this sometime. <Gregg> DONE
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@ This stuff is less important, but still probably worth doing!       @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+
+javadoc tests/
+
+un break java doccing DataCenter.
+

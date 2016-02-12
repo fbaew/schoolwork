@@ -1,0 +1,19 @@
+Movie 5 is the best movie ever
+Movie 3 is better than both movies 1 and 2, but not as good as 5
+Movies 1 and 2 are tied exactly.
+Movie 4 is not as good as movies 1 and 2
+Movie 6 is the worst movie ever.
+
+Results...
+
+should go
+Movie 5
+Movie 3
+Movie 1 (alphabetically)
+Movie 2 (alphabetically)
+Movie 4
+(Movie 6 not shown)
+
+Assumptions made about this data set:
+	tests/unit/DataCenterTest.java assumes that there are 8 users in u.user
+	with ascending user ids from 1 to 8.

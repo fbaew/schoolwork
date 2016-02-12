@@ -1,0 +1,16 @@
+We'll have one set of movies which are rated 5 by 1 person each, and one set rated 3 by 
+one person each. The first set will be genre=Documentary. The second set will be 
+Thriller.
+
+Only 2 movies will be marked as comedy, and none will be marked Horror.
+
+Movies 1-5 are Documentaries
+Movies 6-10 are Thrillers
+
+Movie 1 and movie 6 are also comedies
+
+commands to test:
+
+data/genrefilter top --genre=Thriller
+data/genrefilter top --genre=Comedy
+data/genrefilter top --genre=Horror
