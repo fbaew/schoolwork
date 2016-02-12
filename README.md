@@ -19,3 +19,13 @@ Compilers
 In addition to a formidible serving of theoretical content, over the course
 of the term, we were responsible for implementing a compiler for a toy language
 ("Minisculus"), targeting a toy stack machine.
+
+MovieExplore
+------------
+This was a semester-long project I produced with fellow student Kyle Millz for a
+Software Engineering course. I have included it here as one of the main focuses
+in that course was learning to write test cases. Take a look at movieexplore/README
+for build instructions and information about running the tests.
+
+MovieExplore is a frontend for the MovieLens dataset, allowing you to search for
+movies and to browse automatically-generated recoommendations.
